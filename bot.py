@@ -7,7 +7,7 @@ import time
 import os
 
 # ===== 基本設定 =====
-TOKEN = os.getenv("DISCORD_TOKEN")  # ⚠️ 請把 Token 放到環境變數
+TOKEN = os.getenv("TOKEN")  # ⚠️ 請把 Token 放到環境變數
 GUILD_ID = 1392838594741276767
 
 intents = discord.Intents.default()
@@ -125,11 +125,11 @@ async def giveaway(interaction: discord.Interaction, duration: str, winners: int
         icon_url=interaction.guild.icon.url if interaction.guild.icon else None
     )
 
-    embed.add_field(name="➡ Host", value=interaction.user.mention, inline=False)
-    embed.add_field(name="➡ Prize", value=prize, inline=False)
-    embed.add_field(name="➡ Winners", value=str(winners), inline=False)
+    embed.add_field(name="Host:", value=interaction.user.mention, inline=False)
+    embed.add_field(name="Prize:", value=prize, inline=False)
+    embed.add_field(name="Winners:", value=str(winners), inline=False)
     embed.add_field(
-        name="➡ Ends",
+        name="Ends:",
         value=f"<t:{end_timestamp}:F> (<t:{end_timestamp}:R>)",
         inline=False
     )
@@ -174,4 +174,5 @@ async def giveaway(interaction: discord.Interaction, duration: str, winners: int
 
 
 bot.run(TOKEN)
+
 
