@@ -7,7 +7,7 @@ import time
 import os
 
 # ===== 基本設定 =====
-TOKEN = os.getenv("TOKEN")  # ⚠️ 請把 Token 放到環境變數
+TOKEN = os.getenv("DISCORD_TOKEN")  # ⚠️ 請把 Token 放到環境變數
 GUILD_ID = 1392838594741276767
 
 intents = discord.Intents.default()
@@ -174,5 +174,6 @@ async def giveaway(interaction: discord.Interaction, duration: str, winners: int
 
 
 bot.run(TOKEN)
+
 
 
